@@ -1,0 +1,22 @@
+#include<iostream>
+
+using namespace std;
+int main()
+{
+    int a, b, n,k=1000,ans=0;
+    cin >> a >> b >> n;
+    int la=0, lb=0;
+    while(cin >> k) {
+        if (k != 0) {
+            if (k == a)la += a;
+            if (k == -a)la += -a;
+            if (k == b)lb += b;
+            if (k == -b)lb += -b;
+        }
+        else {
+            if (la > 0 && lb > 0) ans++;
+            la = 0; lb = 0;
+        }   
+    }
+    cout << ans;
+}
