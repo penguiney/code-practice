@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	int right[5];
+	int n; 
+	int now[5];
+	while (cin >> right[0]) {
+		cin >> right[1] >> right[2] >> right[3];
+		cin >> n;
+		for (int i = 0; i < n; i++) {
+			int A = 0; int B = 0;
+			cin >> now[0] >> now[1] >> now[2] >> now[3];	
+			for (int j = 0; j < 4; j++) if (right[j] == now[j]) A++;
+			for (int j = 1; j < 10; j++) {
+				int r = 0; int nn = 0;
+				for (int k = 0; k < 4; k++) {
+					if (right[k] == j) r++;
+					if (now[k] == j) nn++;
+				}
+				if (r > nn) B += nn;
+				else B += r;
+			}
+			B -= A;
+			cout << A << "A" << B << "B" << endl;
+		}
+	}
+}
