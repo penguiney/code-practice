@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int main() {
+	float a, b, c, d, e, f,x,y;
+	cin >> a >> b >> c >> d >> e >> f;
+	if (b * d - a * e == 0) {
+		if (d * c - a * f == 0) cout << "Too many";
+		else cout << "No answer";
+	}
+	else {
+		y = { (d * c - a * f) / (d * b - a * e) };
+		x = { (b * f - e * c) / (d * b - a * e) };
+		cout << "x=" << fixed << setprecision(2) << x << endl;
+		cout << "y=" << fixed << setprecision(2) << y << endl;
+	}	
+}
